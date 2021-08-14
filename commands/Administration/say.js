@@ -15,7 +15,7 @@ module.exports = {
             .setColor(ee.wrongcolor)
             .setFooter(ee.footertext, ee.footericon)
             .setTitle(`❌ ERROR | You didn't provided a Text`)
-            .setDescription(`Usage: \`${prefix}${this.usage}\``)
+            .setDescription(`Usage: \`${prefix}say <TEXT>\``)
         );
       message.channel.send(text);
     } catch (e) {
