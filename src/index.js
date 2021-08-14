@@ -34,41 +34,41 @@ client.on('message', message => {
                 message.delete();
                 message.reply('You do not have permissions to use the resethwid command!')
             } else {
-            if (args[1] === undefined) {
-                message.delete();
-                message.channel.send('You need to specify a user to reset their hwid!');
-            } else {
-                message.channel.send('Reset ' + args[1] + "'s HWID");
+                if (args[1] === undefined) {
+                    message.delete();
+                    message.channel.send('You need to specify a user to reset their hwid!');
+                } else {
+                    message.channel.send('Reset ' + args[1] + "'s HWID");
+                }
             }
-        }
-        break;
+            break;
         case 'addsub':
             if (!message.member.hasPermission('ADMINISTRATOR')) {
                 message.delete();
                 message.reply('You do not have permissions to use the addsub command!')
             } else {
-            if (!args[2]) {
-                message.delete();
-                message.channel.send('Incorrect syntax\nUsage - ' + process.env.PREFIX + 'addsub <user> <time in days>');
-            } else {
-                message.channel.send('Added ' + args[2] + ' day(s) to ' + args[1] + "'s sub time");
+                if (!args[2]) {
+                    message.delete();
+                    message.channel.send('Incorrect syntax\nUsage - ' + process.env.PREFIX + 'addsub <user> <time in days>');
+                } else {
+                    message.channel.send('Added ' + args[2] + ' day(s) to ' + args[1] + "'s sub time");
+                }
             }
-        }
-        break;
+            break;
         case 'removesub':
             if (!message.member.hasPermission('ADMINISTRATOR')) {
                 message.delete();
                 message.reply('You do not have permissions to use the removesub command!')
             } else {
-            if (!args[2]) {
-                message.delete();
-                message.channel.send('Incorrect syntax\nUsage - ' + process.env.PREFIX + 'removesub <user> <time in days>');
-            } else {
-                message.channel.send('Removed ' + args[2] + ' day(s) from ' + args[1] + "'s sub time");
-            }
+                if (!args[2]) {
+                    message.delete();
+                    message.channel.send('Incorrect syntax\nUsage - ' + process.env.PREFIX + 'removesub <user> <time in days>');
+                } else {
+                    message.channel.send('Removed ' + args[2] + ' day(s) from ' + args[1] + "'s sub time");
+                }
             }
             break;
-            case 'dicksize':
+        case 'dicksize':
             message.delete();
             const dickSizeArray = [
                 '8=D',
@@ -247,8 +247,8 @@ client.on('message', message => {
             break;
         case 'nigga':
             message.delete();
-            message.channel.send('https://tenor.com/view/really-are-you-kidding-me-got-to-be-kidding-youre-kidding-me-seriously-gif-5606205');    
-        break;
+            message.channel.send('https://tenor.com/view/really-are-you-kidding-me-got-to-be-kidding-youre-kidding-me-seriously-gif-5606205');
+            break;
         case 'help':
             message.delete();
             const embed = new MessageEmbed()
@@ -259,8 +259,8 @@ client.on('message', message => {
 
             if (args[1] === 'ping') {
                 message.channel.send(process.env.PREFIX + 'ping Returns the latency of the bot.');
-        }
-        break;
+            }
+            break;
         case 'info':
             if (!message.member.hasPermission('ADMINISTRATOR')) {
                 message.delete();
@@ -271,14 +271,14 @@ client.on('message', message => {
                     message.channel.send('Please specify a user to grab info from!');
                 } else {
                     const embed = new MessageEmbed()
-                    .setTitle(args[1] + "'s user info")
-                    .setDescription('Info here')
-                    .setColor(theme)
-                    .setFooter('sleek.cc')
-                message.channel.send(embed);
+                        .setTitle(args[1] + "'s user info")
+                        .setDescription('Info here')
+                        .setColor(theme)
+                        .setFooter('sleek.cc')
+                    message.channel.send(embed);
                 }
             }
-        break;
+            break;
     }
 })
 
