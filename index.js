@@ -20,6 +20,10 @@ client.aliases = new Discord.Collection(); //an collection for all your command-
 client.categories = fs.readdirSync("./commands/"); //categories
 client.cooldowns = new Discord.Collection(); //an collection for cooldown commands of each user
 
+client.on("ready", () => {
+   client.api
+});
+
 //Loading files, with the client variable like Command Handler, Event Handler, ...
 ["command", "events"].forEach(handler => {
     require(`./handlers/${handler}`)(client);

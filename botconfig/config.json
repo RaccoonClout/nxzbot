@@ -1,5 +1,5 @@
 {
-  "token": "TOKEN HERE",
+  "token": "TOKEN_HERE",
   "prefix": "./",
   "defaultCommandCooldown" : 1
 }

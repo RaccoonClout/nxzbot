@@ -9,7 +9,9 @@ module.exports = {
     usage: "ban",
     description: "Bans a user",
     run: async (client, message, args, user, text, prefix) => {
-    try{
+      try{
+      const guild_member = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[1]))
+      guild_member.ban()
       message.channel.send(new MessageEmbed()
         .setColor(ee.color)
         .setFooter(ee.footertext, ee.footericon)
