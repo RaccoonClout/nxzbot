@@ -1,31 +1,20 @@
 {
-  "name": "nxzbot",
+  "name": "discord-js-handler-template",
   "version": "1.0.0",
-  "description": "open source discord.js bot",
+  "description": "Discord.js Command and Event Handler Template with example Command usages!",
   "main": "index.js",
   "scripts": {
-    "compile": "tsc src/index.ts --outDir dist/",
-    "run": "node dist/index.js",
-    "tsw": "tsc -w src/index.ts --outDir dist/",
-    "ndw": "nodemon dist/index.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/RaccoonClout/nxzbot.git"
-  },
-  "keywords": [],
-  "author": "",
+  "author": "Tomato#6966 (author of this template)",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/RaccoonClout/nxzbot/issues"
-  },
-  "homepage": "https://github.com/RaccoonClout/nxzbot#readme",
-  "devDependencies": {
-    "dotenv": "^8.2.0",
-    "nodemon": "^2.0.6"
-  },
   "dependencies": {
-    "discord.js": "^12.5.0",
-    "typescript": "^4.3.5"
+    "ascii-table": "0.0.9",
+    "discord.js": "^12.5.1"
+  },
+  "devDependencies": {
+    "ascii-table": "0.0.9",
+    "colors": "^1.4.0"
   }
 }
