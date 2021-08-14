@@ -2,35 +2,28 @@ const { MessageEmbed } = require("discord.js");
 const config = require("../../botconfig/config.json");
 const ee = require("../../botconfig/embed.json");
 module.exports = {
-    name: "ban",
+    name: "addrole",
     category: "Administration",
-    aliases: ["bab", "1"],
+    aliases: [""],
     cooldown: 1,
-    usage: "ban <USER> <REASON>",
-    description: "Bans a user",
+    usage: "addrole <USER> <ROLE>",
+    description: "Adds a role to a user",
     run: async (client, message, args, user, text, prefix) => {
       try{
         if(!args[0])
         return message.channel.send(new MessageEmbed()
             .setColor(ee.wrongcolor)
             .setFooter(ee.footertext, ee.footericon)
-            .setTitle(`❌ ERROR | You did not specify somebody to ban!`)
-            .setDescription(`Usage: \`${prefix}ban <USER> <REASON>\``)
+            .setTitle(`❌ ERROR | You did not specify somebody to add a role to!`)
+            .setDescription(`Usage: \`${prefix}addrole <USER> <ROLE>\``)
         );
-      const guild_member = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[1]))
-      guild_member.ban()
-      if(!args[1])
-      return message.channel.send(new MessageEmbed()
-        .setColor(ee.color)
-        .setFooter(ee.footertext, ee.footericon)
-        .setTitle(`Banned ${guild_member}`)
-        .setDescription('Reason: No reason')
-      );
+        const role = args[1]
+        const member = args[0]
+        member.roles.add(role);
       message.channel.send(new MessageEmbed()
         .setColor(ee.color)
         .setFooter(ee.footertext, ee.footericon)
-        .setTitle(`Banned ${guild_member}`)
-        .setDescription(`Reason: ${reason}`)
+        .setTitle(`Added ${member} to the ${role} role`)
       );
     } catch (e) {
         console.log(String(e.stack).bgRed)
