@@ -10,11 +10,7 @@ module.exports = {
     description: "Terminates the bots connection to discord",
     run: async (client, message, args, user, text, prefix) => {
     try{
-        return message.channel.send(new MessageEmbed()
-        .setColor(ee.wrongcolor)
-        .setFooter(ee.footertext, ee.footericon)
-        .setTitle("Bot has been terminated.")
-    ), client.destroy();
+        client.destroy();
     } catch (e) {
         console.log(String(e.stack).bgRed)
         return message.channel.send(new MessageEmbed()
